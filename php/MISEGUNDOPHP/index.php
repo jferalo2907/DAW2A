@@ -1,84 +1,88 @@
 <?php
-$nombre = "Estudiante de php";
+// Definimos algunas variables
+$nombre = "Estudiante de PHP";
 $hoy = date("d/m/Y H:i:s");
 
-function saludar($nombre, $hoy) {
-    return "Hola $nombre, hoy es $hoy";
+// Creamos una función para dar formato a un mensaje
+function saludar($persona, $momento) {
+    return "Hola, $persona 👋. Hoy es $momento";
 }
 
+function mayorOMenor($numero1,$numero2) {
+    if ($numero1>$numero2){return "El mayor numero es, $numero1";}
+    if ($numero2>$numero1){return "El mayor numero es, $numero2";}
+}
+
+function imprime($miArray) {
+    $resultado = "";
+    $i = 0;
+    while ($i<5) {
+        $resultado = $resultado.$miArray[$i];
+        $resultado = $resultado. " ";
+        $i++;
+    }
+    return $resultado; 
+}
+
+
+// Un array con frases motivacionales
 $frases = [
-    "FRASE 1",
-    "FRASE 2",
-    "FRASE 3"
+    "Aprender un lenguaje nuevo siempre abre puertas 🚪",
+    "PHP es el motor detrás de gran parte de la web 🌐",
+    "Practicar cada día te hará mejorar 💪"
 ];
 
+$nombret = "Luis";
+function damePeso($miDiccionario, $nombret) {
+ return "El peso de ".$nombret." es " .$miDiccionario[$nombret];   
+}
+
+
+// Elegimos una frase aleatoria
 $frase = $frases[array_rand($frases)];
 
-$mostrarContenido = false;
+$numero1 = 20;
+$numero2 = 21;
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['mostrar'])) {
-    $mostrarContenido = true;
+$miArray = [2,4,6, 8, 10];
+
+$miDiccionario = array(
+"Pepe"=>23,
+"Juan"=> 45,
+"Eva"=> 60,
+"Luis"=> 70,
+"Fede"=> 90,
+);
+
+function mostrarDiccionario($diccionario) {
+    foreach ($diccionario as $nombre => $Peso) {
+        echo "$nombre - Peso: $Peso<br>";
+    }
 }
+
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
-    <title>Mi primera app php</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
-            color: #333;
-            text-align: center;
-            padding: 50px;
-        }
-
-        button {
-            background-color: #ff6f61;
-            border: none;
-            color: white;
-            padding: 15px 30px;
-            font-size: 1.2em;
-            border-radius: 8px;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(255, 111, 97, 0.5);
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #ff3b2e;
-        }
-
-        h1 {
-            color: #fff;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
-        }
-
-        p {
-            font-size: 1.3em;
-            background: rgba(255, 255, 255, 0.8);
-            display: inline-block;
-            padding: 15px 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-            color: #333;
-            font-weight: 600;
-        }
-    </style>
+    <title>Mi primera app PHP</title>
 </head>
-
 <body>
-    <form method="post">
-        <button type="submit" name="mostrar">Sorpresa</button>
-    </form>
+    <h1><?php echo saludar($nombre, $hoy); ?></h1>
+    <p><strong>Frase del día:</strong> <?php echo $frase; ?></p>
+    <h1><?php echo mayorOMenor($numero1,$numero2) ?></h1>
 
-    <?php if ($mostrarContenido): ?>
-        <h1><?php echo saludar($nombre, $hoy); ?></h1>
-        <p><strong>Frase del día:</strong> <?php echo $frase ?></p>
-    <?php endif; ?>
+    <p>
+        <?php foreach($miArray as $numero) {echo  "$numero <br>";} ?>
+    </p>
+    <p> <?php echo imprime($miArray) ?> </p>
+    <p>
+        <?php echo damePeso($miDiccionario, $nombret)?>
+    </p>
+    <p>
+        <?php echo mostrarDiccionario($miDiccionario)?>
+    </p>
+
 </body>
-
 </html>
