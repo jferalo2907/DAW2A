@@ -6,7 +6,7 @@ import Menu from "./Components/Menu.jsx";
 const App = () => {
   
   return (
-   <div class="container">
+   <div className="container">
     
     <Header/>
     <Menu/>

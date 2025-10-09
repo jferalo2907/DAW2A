@@ -1,16 +1,15 @@
-const Pizza = () => {
-  return(
+const Pizza = ({ pizza, loquesea }) => {
+  return (
     <div className="pizza">
 
-
-      <img src="pizzas/spinaci.jpg" alt="spinaci" />
-        <div className="pizza-text">
-      <h2>Pizza</h2>
-      <p>Ingredientes: tomate.. </p>
+      <img src={pizza.photoName} alt={pizza.name} />
+      <div className="pizza-text">
+        <h2>{pizza.name}</h2>
+        <p>{pizza.ingredients} </p>
       </div>
-    
+
     </div>
   );
-}
+};
 
 export default Pizza;
