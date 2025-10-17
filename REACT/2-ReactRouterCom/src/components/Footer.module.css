@@ -1,0 +1,11 @@
+.footer {
+    display: flex;
+    gap: 1rem;
+    padding: 4px;
+    justify-content: space-between;
+}
+
+.color-fondo {
+    background-color: blue;
+    color: white; /* Corregido: para que el texto sea visible */
+}

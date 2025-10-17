@@ -1,0 +1,14 @@
+.container {
+  display: grid;
+  /* Define 3 filas: header (auto), main (1fr), footer (auto) */
+  grid-template-rows: auto 1fr auto;
+  /* Asegura que el contenedor ocupe como mínimo toda la altura de la pantalla */
+  min-height: 100vh;
+}
+
+/* ✨ ESTILOS PARA CENTRAR EL CONTENIDO DEL MAIN ✨ */
+.main-content {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center;    /* Centra verticalmente */
+}
