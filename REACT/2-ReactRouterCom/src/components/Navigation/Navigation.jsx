@@ -14,7 +14,7 @@ function Navigation() {
             <ul className={stylesHeader.lista}>
                 <li> <Link to="login"> Login </Link></li>
                 <li> <Link to="registro"> Registro </Link></li>
-                <li> <Link to="contacto"> Contacto </Link></li>
+                <li> <Link to="contacto" > Contacto </Link></li>
             </ul>
         </div>
 
