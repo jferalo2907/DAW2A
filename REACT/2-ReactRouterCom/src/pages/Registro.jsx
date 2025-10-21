@@ -1,5 +1,18 @@
+import Header from "../components/Header"
+import Footer from "../components/Footer"
+import stylesHome from "./Home.module.css"
+
+
+
 function Registro( ) {
-    return <div>Soy el Registro</div>
+    return <div className={stylesHome.container}>
+      <Header />
+      <main className={stylesHome["main-content"]}>
+      Esto es el Registro
+      </main>
+
+      <Footer />
+    </div>
 }
 
 export default Registro

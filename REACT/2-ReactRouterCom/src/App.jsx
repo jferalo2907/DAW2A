@@ -7,6 +7,8 @@ import Contacto from "./pages/Contacto";
 import Registro from "./pages/Registro";
 import { Link } from "react-router-dom";
 import BigLayout from "./pages/BigLayout";
+import ProductDetail from "./components/ProductDetail";
+
 
 import { Routes, Route } from 'react-router-dom'
 
@@ -16,13 +18,14 @@ function App() {
    
       <div>
        <Routes>
-         <Route path="/" element={<BigLayout/>}/>
-        <Route path="/" element={<Home/>}/>
+        
+        <Route path="/" element={<BigLayout/>}/>
+        <Route index element={<Home/>}/>
         <Route path="/pagina2" element={<Pagina2/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/contacto" element={<Contacto/>}/>
         <Route path="/registro" element={<Registro/>}/>
-
+        <Route path="home/:productId" element={<ProductDetail/>}/>
 
 
        </Routes>
